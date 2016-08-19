@@ -1,0 +1,38 @@
+{
+  "name": "ws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JohnyGemityg/node_ws.git"
+  },
+  "keywords": [
+    "cli",
+    "webshare",
+    "client"
+  ],
+  "author": "Jan Pokorný",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnyGemityg/node_ws/issues"
+  },
+  "homepage": "https://github.com/JohnyGemityg/node_ws#readme",
+  "dependencies": {
+    "child-process-promise": "^2.0.3",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.9.0",
+    "crypto-js": "^3.1.6",
+    "form-serialize": "^0.7.1",
+    "form-urlencoded": "^1.4.1",
+    "jQuery": "^1.7.4",
+    "jsdom": "^9.4.1",
+    "node-rest-client": "^2.0.1",
+    "node-serialize": "0.0.4",
+    "xml2js": "^0.4.17"
+  }
+}
