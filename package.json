@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/JohnyGemityg/node_ws.git"
+    "url": "git+ssh://git@github.com:JohnyGemityg/webshare-cli.git"
   },
   "keywords": [
     "cli",
@@ -18,9 +15,9 @@
   "author": "Jan Pokorný",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JohnyGemityg/node_ws/issues"
+    "url": "https://github.com/JohnyGemityg/webshare-cli/issues"
   },
-  "homepage": "https://github.com/JohnyGemityg/node_ws#readme",
+  "homepage": "https://github.com/JohnyGemityg/webshare-cli#readme",
   "dependencies": {
     "child-process-promise": "^2.0.3",
     "co": "^4.6.0",
