@@ -1,10 +1,11 @@
 # Webshare CLI
 
-App for managing downloads directly from console. Perfect for NAS.
+Unofficial Websahre.cz CLI app for managing downloads directly from console. Perfect for NAS.
+It generates list of links and the downloads them via wget.
 
 ### Installation
 
-Requires [Node.js](https://nodejs.org/) v6+ to run.
+Requires [Node.js](https://nodejs.org/) v6+ and wget to run.
 
 Download and extract.
 
