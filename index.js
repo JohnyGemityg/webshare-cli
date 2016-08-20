@@ -1,14 +1,14 @@
-
+var spawn = require('child-process-promise').spawn;
 var co = require('co');
 var prompt = require('co-prompt');
+var CryptoJS = require('crypto-js');
+var formurlencoded = require('form-urlencoded');
 var Client = require('node-rest-client').Client;
 var parseString = require('xml2js').parseString;
-var formurlencoded = require('form-urlencoded');
-var CryptoJS = require('crypto-js');
+
+
 var md5crypt = require('./libs/md5crypt');
 var fs = require('fs');
-var spawn = require('child-process-promise').spawn;
-
 
 
 var client = new Client();
@@ -162,20 +162,20 @@ class Ws {
     }
 
     printHelp() {
-        console.log("Its unstable as hell");
+        console.log("Its unstable as hell try to read readme");
     }
 
     getCommands() {
         return {
             login: {
-                pattern: /^login (\w+) (\w+)$/i,
+                pattern: /^login (.+) (\w+)$/i,
                 hint: "login #username #password",
                 cb: (match) => {
                     return this.login(match[1], match[2])
                 }
             },
             search: {
-                pattern: /^search (\w+)$/i,
+                pattern: /^search (.+)$/i,
                 hint: "search #what",
                 cb: (match) => {
                     this.offset = 0;
@@ -221,7 +221,7 @@ class Ws {
                 }
             },
             save: {
-                pattern: /save (\w+)$/i,
+                pattern: /save (.+)$/i,
                 hint: "save #what",
                 cb: (match) => {
                     return this.save(match[1]);
