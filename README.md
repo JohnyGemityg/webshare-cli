@@ -12,8 +12,8 @@ Download and extract.
 Install and run
 
 ```sh
-$ npm install
-$ node index.js
+$ npm install -g
+$ webshare-cli
 ```
 
 ### Commands

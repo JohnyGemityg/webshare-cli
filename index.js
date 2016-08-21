@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var spawn = require('child-process-promise').spawn;
 var co = require('co');
 var prompt = require('co-prompt');

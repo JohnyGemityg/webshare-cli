@@ -1,5 +1,5 @@
 {
-  "name": "ws",
+  "name": "webshare-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,6 +7,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com:JohnyGemityg/webshare-cli.git"
   },
+  "bin" : { "webshare-cli" : "./index.js" },
   "keywords": [
     "cli",
     "webshare",
