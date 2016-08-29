@@ -34,7 +34,6 @@ Want to contribute? Great!
 
 ### Todos
 
- - Save command
 
 License
 ----
