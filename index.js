@@ -114,7 +114,6 @@ class Ws {
 
     prepareLinksFile(fileName = ".links") {
         var links = "";
-        console.log(this.files);
         var actions = this.files.map(file => {
             return this.getLink(file.ident[0]).then(link => {
                 links += link + "\n";
@@ -216,7 +215,6 @@ class Ws {
                         const ids = idsString.split(",");
                         ids.map(id=>{
                             this.files.push(this.results[id - 1]);
-                            console.log(id-1);
                         })
                         resolve();
                     });
