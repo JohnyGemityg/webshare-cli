@@ -112,7 +112,7 @@ class Ws {
         })
     }
 
-    prepareLinksFile() {
+    prepareLinksFile(fileName = ".links") {
         var links = "";
         var actions = this.files.map(file => {
             return this.getLink(file.ident[0]).then(link => {
@@ -120,7 +120,7 @@ class Ws {
             });
         });
         return Promise.all(actions).then(() => {
-            fs.writeFile('.links', links, (err) => {
+            fs.writeFile(fileName, links, (err) => {
                 if (err)
                     console.log(err);
                 return
@@ -135,6 +135,10 @@ class Ws {
             promise.childProcess.stderr.pipe(process.stdout)
             return promise.then(()=> console.log());
         });
+    }
+
+    save(fileName){
+        this.prepareLinksFile(fileName);
     }
 
 
