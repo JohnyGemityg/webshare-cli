@@ -112,15 +112,16 @@ class Ws {
         })
     }
 
-    prepareLinksFile() {
+    prepareLinksFile(fileName = ".links") {
         var links = "";
         var actions = this.files.map(file => {
             return this.getLink(file.ident[0]).then(link => {
                 links += link + "\n";
             });
         });
+        
         return Promise.all(actions).then(() => {
-            fs.writeFile('.links', links, (err) => {
+            fs.writeFile(fileName, links, (err) => {
                 if (err)
                     console.log(err);
                 return
@@ -135,6 +136,10 @@ class Ws {
             promise.childProcess.stderr.pipe(process.stdout)
             return promise.then(()=> console.log());
         });
+    }
+
+    save(fileName){
+        this.prepareLinksFile(fileName);
     }
 
 
@@ -202,21 +207,30 @@ class Ws {
                 }
             },
             mark: {
-                pattern: /^mark (\d+)$/i,
+                pattern: /^mark ((?:\d?\,?\d)+)$/i,
                 hint: "mark #id",
-                cb: (match) => {
+                cb: (match) => {                    
                     return new Promise((resolve, reject) => {
-                        this.files.push(this.results[match[1] - 1]);
+                        const idsString = match[1];
+                        const ids = idsString.split(",");
+                        ids.map(id=>{
+                            this.files.push(this.results[id - 1]);
+                        })
                         resolve();
                     });
                 }
             },
             unmark: {
-                pattern: /^unmark (\d+)$/i,
+                pattern: /^unmark ((?:\d?\,?\d)+)$/i,
                 hint: "unmark #id",
                 cb: (match) => {
                     return new Promise((resolve, reject) => {
-                        this.files.splice(match[1] - 1, 1);
+                        const idsString = match[1];
+                        const ids = idsString.split(",");
+                        ids.sort((a,b)=>(b-a));
+                        ids.map(id=>{
+                            this.files.splice(id-1, 1);
+                        })
                         resolve();
                     });
                 }
