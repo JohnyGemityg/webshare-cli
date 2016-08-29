@@ -227,8 +227,9 @@ class Ws {
                     return new Promise((resolve, reject) => {
                         const idsString = match[1];
                         const ids = idsString.split(",");
+                        ids.sort((a,b)=>(b-a));
                         ids.map(id=>{
-                            this.files.splice(id - 1, 1);
+                            this.files.splice(id-1, 1);
                         })
                         resolve();
                     });
