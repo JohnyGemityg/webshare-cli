@@ -1,13 +1,15 @@
 {
   "name": "webshare-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:JohnyGemityg/webshare-cli.git"
   },
-  "bin" : { "webshare-cli" : "./index.js" },
+  "bin": {
+    "webshare-cli": "./index.js"
+  },
   "keywords": [
     "cli",
     "webshare",
@@ -25,7 +27,6 @@
     "co-prompt": "^1.0.0",
     "crypto-js": "^3.1.6",
     "form-urlencoded": "^1.4.1",
-    "node-rest-client": "^2.0.1",
-    "xml2js": "^0.4.17"
+    "node-rest-client": "^2.0.1"
   }
 }

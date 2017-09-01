@@ -5,8 +5,6 @@ var prompt = require('co-prompt');
 var CryptoJS = require('crypto-js');
 var formurlencoded = require('form-urlencoded');
 var Client = require('node-rest-client').Client;
-var parseString = require('xml2js').parseString;
-
 
 var md5crypt = require('./libs/md5crypt');
 var fs = require('fs');
@@ -160,9 +158,7 @@ class Ws {
         };
         return new Promise((resolve, reject) => {
             client.post("http://webshare.cz/api/" + method + "/", args, function (data, response) {
-                parseString(data.toString(), function (err, result) {
-                    resolve(result);
-                });
+                resolve(data);
             });
         });
     }
